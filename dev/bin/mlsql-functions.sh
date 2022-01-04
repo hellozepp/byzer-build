@@ -158,8 +158,8 @@ function build_mlsql_api_console {
 ## Builds byzer_notebook shade jar
 function build_byzer_notebook {
     ## Build byzer-notebook
-    sh "${base_dir}/dev/bin/update-byzer-notebook.sh" \
-    && bash "${byzer_notebook_path}"/build/package.sh skipTar
+    sh -x "${base_dir}/dev/bin/update-byzer-notebook.sh" \
+    && bash -x "${byzer_notebook_path}"/build/package.sh skipTar
 
     ## Check if jar file exists
     if [[ ! -d "${byzer_notebook_path}/dist/Byzer-Notebook-${BYZER_NOTEBOOK_VERSION}" ]]
